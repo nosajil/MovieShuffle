@@ -1,0 +1,184 @@
+@use "variables" as v;
+
+@use "mixins" as m;
+
+@use "reset";
+
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    a {
+        text-decoration: none;
+
+        a:hover {
+            transition: all ease 0.2s;
+        }
+    }
+    
+
+    h1 {
+        
+        a {
+            color: black;
+            &:hover {
+                color: rgba(0, 0, 0, 0.854);
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .date-style {
+        font-weight: 700;
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .movie_description {
+        line-height: 2.5rem;
+    }
+
+    .movie_genre {
+        color: grey;
+        font-size: 1.2rem;
+        margin-top: 4rem;
+        margin-bottom: 0;
+    }
+
+    .movie_duration {
+        margin-top: 0;
+    }
+
+    .movie_title_big {
+        font-size: 6rem;
+        font-weight: 900;
+        margin-top: 0;
+    }
+
+    .btn-ba {
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+
+        &:hover {
+            background-color: black;
+            transition: all ease 0.3s;
+
+            a {
+                color: white;
+                transition: all ease 0.3s;
+            }
+            
+        }
+
+        a {
+        color: black;
+        text-transform: uppercase;
+        font-weight: 900;
+        }
+    }
+
+    .movie_wrapper {
+        padding-bottom: 10vh;
+    }
+
+
+}
+
+.movies {
+    display: flex;
+    flex-wrap: wrap;
+
+    .movie {
+        display: flex;
+        margin: 20px 0;
+        position: relative;
+
+        &::after {
+            position: absolute;
+            background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 50%, rgb(0, 0, 0) 100%);
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            content: '';
+          }
+        // background-image: linear-gradient(to bottom,rgba(0, 0, 0, 0), #000 );
+        
+        
+
+        .movie_title, .movie_genres {
+            position: absolute;
+            left: 10%;
+            z-index: 1;
+            color: white;
+        }
+
+        .movie_title {
+            bottom: 10%;
+            font-size: 2rem;
+            a {
+                color: white;
+            }
+        }
+
+        .movie_genres {
+            bottom: 5%;
+            font-size: 1.2rem;
+        }
+    }
+
+    .movie img {
+        max-width: 100%;
+    }
+}
+
+@include m.media(v.$xs-breakpoint) {
+    .movies {
+        justify-content: space-between;
+        .movie {
+            flex-basis: 48%;
+            margin-top: 0;
+        }
+    }
+    
+    
+};
+
+@include m.media(v.$sm-breakpoint) {
+    .movies {
+        justify-content: space-between;
+        .movie {
+            flex-basis: 31%;
+        }
+    }
+    
+    .movie_wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .movie_poster {
+            flex-basis: 30%;
+        }
+
+        .movie_infos {
+            flex-basis: 65%;
+        }
+    }
+};
+
+@include m.media(v.$lg-breakpoint) {
+    .movies {
+        justify-content: space-between;
+        .movie {
+            flex-basis: 18%;
+        }
+    }
+    
+    
+};
