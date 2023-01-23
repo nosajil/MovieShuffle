@@ -63,6 +63,8 @@ body {
         width: 100%;
         text-align: center;
         padding: 10px 0;
+        border: solid black 3px;
+
 
         &:hover {
             background-color: black;
@@ -71,6 +73,7 @@ body {
             a {
                 color: white;
                 transition: all ease 0.3s;
+
             }
             
         }
@@ -145,7 +148,6 @@ body {
             margin-top: 0;
         }
     }
-    
     
 };
 

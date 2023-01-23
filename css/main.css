@@ -61,6 +61,7 @@ body {
   width: 100%;
   text-align: center;
   padding: 10px 0;
+  border: solid black 3px;
 }
 .container .btn-ba:hover {
   background-color: black;
